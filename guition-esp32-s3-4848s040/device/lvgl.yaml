@@ -832,7 +832,7 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $aircon
+                  text: $chevron_up
               - label:
                   align: bottom_left
                   text: "Warmer"
@@ -868,7 +868,7 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $aircon
+                  text: $chevron_down
               - label:
                   align: bottom_left
                   text: "Cooler"
