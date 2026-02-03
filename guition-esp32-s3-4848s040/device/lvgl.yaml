@@ -834,12 +834,8 @@ lvgl:
                   align: top_left
                   text: $aircon
               - label:
-                  text_font: roboto17_font
-                  align: top_right
-                  text: "+1"
-              - label:
                   align: bottom_left
-                  text: "Temp Up"
+                  text: "Warmer"
             on_click:
               - homeassistant.service:
                   service: climate.set_temperature
@@ -874,12 +870,8 @@ lvgl:
                   align: top_left
                   text: $aircon
               - label:
-                  text_font: roboto17_font
-                  align: top_right
-                  text: "-1"
-              - label:
                   align: bottom_left
-                  text: "Temp Down"
+                  text: "Cooler"
             on_click:
               - homeassistant.service:
                   service: climate.set_temperature
