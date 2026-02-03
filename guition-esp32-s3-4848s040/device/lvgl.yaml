@@ -966,6 +966,25 @@ lvgl:
                   on_click:
                     - lvgl.page.show: aircon_page
 
+              # Power button
+              - button:
+                  id: aircon_lab_power_button
+                  width: 60px
+                  height: 60px
+                  x: 415
+                  y: 34
+                  styles: control
+                  widgets:
+                    - label:
+                        text_font: $icon_font
+                        align: center
+                        text: $power
+                  on_click:
+                    - homeassistant.service:
+                        service: switch.toggle
+                        data:
+                          entity_id: switch.office_air_conditioner
+
               # Arc control for target temperature
               - arc:
                   id: aircon_target_arc

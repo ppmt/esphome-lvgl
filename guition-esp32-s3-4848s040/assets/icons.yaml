@@ -25,6 +25,7 @@ font:
       "\U000F089E",  # mdi-battery
       "\U000F07DE",  # mdi-filament
       "\U000F0317",  # mdi-lan
+      "\U000F0425",  # mdi-power
       ]
 
 # Map icons to names
@@ -48,3 +49,4 @@ substitutions:
   battery:        "\U000F089E"
   filament:       "\U000F07DE"
   lan:            "\U000F0317"
+  power:          "\U000F0425"
