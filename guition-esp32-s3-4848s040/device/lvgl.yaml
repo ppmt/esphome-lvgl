@@ -969,10 +969,10 @@ lvgl:
               # Arc control for target temperature
               - arc:
                   id: aircon_target_arc
-                  x: 40
-                  y: 60
-                  width: 400
-                  height: 400
+                  x: 70
+                  y: 90
+                  width: 340
+                  height: 340
                   min_value: 8
                   max_value: 25
                   start_angle: 135
@@ -998,10 +998,10 @@ lvgl:
               # Arc indicator for current temperature (read-only)
               - arc:
                   id: aircon_current_arc
-                  x: 40
-                  y: 60
-                  width: 400
-                  height: 400
+                  x: 70
+                  y: 90
+                  width: 340
+                  height: 340
                   min_value: 8
                   max_value: 25
                   start_angle: 135
