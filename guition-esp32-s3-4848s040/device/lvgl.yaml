@@ -981,7 +981,6 @@ lvgl:
                   arc_color: 0x000000
                   clickable: true
                   adjustable: true
-                  hidden: true
                   indicator:
                     arc_color: 0x2E6B2E
                     arc_width: 26
