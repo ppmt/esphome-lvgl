@@ -117,7 +117,8 @@ display:
     model: JC1060P470
     reset_pin:
       number: GPIO05
-    rotation: 90
+    rotation: 0
     update_interval: never
     auto_clear_enabled: false
     hsync_pulse_width: 20
+    
