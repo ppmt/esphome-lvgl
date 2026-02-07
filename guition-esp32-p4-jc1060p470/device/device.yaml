@@ -117,8 +117,9 @@ display:
     model: JC1060P470
     reset_pin:
       number: GPIO05
+    dimensions: 1024x600
+    color_order: rgb
     rotation: 0
     update_interval: never
     auto_clear_enabled: false
     hsync_pulse_width: 20
-    
