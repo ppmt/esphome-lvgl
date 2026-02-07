@@ -81,6 +81,8 @@ lvgl:
       pad_bottom: 5
       pad_left: 5
       pad_right: 5
+      pad_row: $padding
+      pad_column: $padding
       
       widgets:
       
@@ -101,8 +103,8 @@ lvgl:
         #   When that sensor is OFF, this button appears unchecked (dimmed)
         # =========================================================================
         - button: 
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: false
             id: office_scene_features_button
             styles: control
@@ -138,8 +140,8 @@ lvgl:
         #   When that sensor is ON, this button appears "checked" (highlighted)
         # =========================================================================
         - button: 
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: false
             id: office_scene_calls_button
             styles: control
@@ -175,8 +177,8 @@ lvgl:
         #   When that sensor is ON, this button appears "checked" (highlighted)
         # =========================================================================
         - button: 
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: false
             id: office_scene_evening_button
             styles: control
@@ -212,8 +214,8 @@ lvgl:
         #   When that sensor is ON, this button appears "checked" (highlighted)
         # =========================================================================
         - button: 
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: false
             id: office_scene_dimmed_button
             styles: control
@@ -240,8 +242,8 @@ lvgl:
         #   Navigates to the dedicated blinds control page.
         # =========================================================================
         - button: 
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: false
             id: blinds_nav_button
             styles: control
@@ -275,8 +277,8 @@ lvgl:
         #   When the switch is OFF, this button appears unchecked (dimmed)
         # =========================================================================
         - button: 
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: true
             id: printer_power_button
             styles: control
@@ -341,8 +343,8 @@ lvgl:
         #   When the switch is OFF, this button appears unchecked (dimmed)
         # =========================================================================
         - button: 
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: true
             id: filament_heater_button
             styles: control
@@ -403,8 +405,8 @@ lvgl:
         #   When the AC is off, this button appears unchecked (dimmed)
         # =========================================================================
         - button: 
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: true
             id: office_aircon_button
             styles: control
@@ -429,8 +431,8 @@ lvgl:
         #   Navigates to the extras page.
         # =========================================================================
         - button:
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: false
             id: extras_nav_button
             styles: control
@@ -459,6 +461,8 @@ lvgl:
       pad_bottom: 5
       pad_left: 5
       pad_right: 5
+      pad_row: $padding
+      pad_column: $padding
 
       widgets:
 
@@ -466,8 +470,8 @@ lvgl:
         # BUTTON: Back (Return to Main Page)
         # =========================================================================
         - button:
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: false
             id: extras_back_button
             styles: control
@@ -486,8 +490,8 @@ lvgl:
         # BUTTON: Heating Thermostat (Lab Layout)
         # =========================================================================
         - button:
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: false
             id: heating_lab_nav_button
             styles: control
@@ -517,8 +521,8 @@ lvgl:
         #   When the switch is ON, this button appears "checked" (highlighted)
         # =========================================================================
         - button:
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: true
             id: battery_charger_button
             styles: control
@@ -553,8 +557,8 @@ lvgl:
         #   When the light is ON, this button appears "checked" (highlighted)
         # =========================================================================
         - button:
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: true
             id: storage_lights_button
             styles: control
@@ -589,8 +593,8 @@ lvgl:
         #   When the light is ON, this button appears "checked" (highlighted)
         # =========================================================================
         - button:
-            height: $button_height_single
-            width: $button_width
+            height: 100%
+            width: 100%
             checkable: true
             id: network_rack_button
             styles: control
