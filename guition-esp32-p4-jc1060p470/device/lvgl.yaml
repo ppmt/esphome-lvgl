@@ -9,7 +9,7 @@ lvgl:
       - label:
           text: "-° / -°"
           id: temperatures
-          styles: roboto24_style
+          styles: roboto20_style
           align: top_left
           x: 8
           y: 4
@@ -19,7 +19,7 @@ lvgl:
       - label:
           text: "--:--"
           id: display_time
-          styles: roboto24_style
+          styles: roboto20_style
           align: top_mid
           x: 0
           y: 4
