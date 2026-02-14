@@ -114,7 +114,7 @@ text_sensor:
   - platform: homeassistant
     entity_id: media_player.office
     id: media_player_state_sensor
-    on_state:
+    on_value:
       - lvgl.label.update:
           id: media_play_pause_icon
           text: !lambda |-
