@@ -85,7 +85,7 @@ lvgl:
               - homeassistant.service:
                   service: media_player.media_play_pause
                   data:
-                    entity_id: media_player.office
+                    entity_id: ${media_player}
 
         - button:
             id: media_next_button
@@ -104,7 +104,7 @@ lvgl:
               - homeassistant.service:
                   service: media_player.media_next_track
                   data:
-                    entity_id: media_player.office
+                    entity_id: ${media_player}
 
         # Play clocks: elapsed (left) and duration (right), below buttons and above progress bar
         - label:

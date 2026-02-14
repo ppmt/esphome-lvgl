@@ -63,7 +63,7 @@ interval:
 
 text_sensor:
   - platform: homeassistant
-    entity_id: media_player.office
+    entity_id: ${media_player}
     id: media_title_sensor
     attribute: media_title
     on_value:
@@ -90,7 +90,7 @@ text_sensor:
           value: 0
 
   - platform: homeassistant
-    entity_id: media_player.office
+    entity_id: ${media_player}
     id: media_artist_sensor
     attribute: media_artist
     on_value:
@@ -99,7 +99,7 @@ text_sensor:
           text: !lambda 'return x.empty() ? std::string("—") : x;'
 
   - platform: homeassistant
-    entity_id: media_player.office
+    entity_id: ${media_player}
     id: media_entity_picture_sensor
     attribute: entity_picture
     on_value:
@@ -112,10 +112,10 @@ text_sensor:
                 url: !lambda |-
                   std::string path = x;
                   while (!path.empty() && (path.back() == '\n' || path.back() == '\r' || path.back() == ' ')) path.pop_back();
-                  return std::string("http://192.168.1.30:8123") + path;
+                  return std::string("${home_assistant_url}") + path;
 
   - platform: homeassistant
-    entity_id: media_player.office
+    entity_id: ${media_player}
     id: media_player_state_sensor
     on_value:
       - if:
@@ -134,7 +134,7 @@ text_sensor:
 
 sensor:
   - platform: homeassistant
-    entity_id: media_player.office
+    entity_id: ${media_player}
     id: media_duration_sensor
     attribute: media_duration
     on_value:
@@ -150,7 +150,7 @@ sensor:
             return std::string(buf);
 
   - platform: homeassistant
-    entity_id: media_player.office
+    entity_id: ${media_player}
     id: media_position_sensor
     attribute: media_position
     on_value:
