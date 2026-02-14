@@ -9,7 +9,8 @@ lvgl:
   buffer_size: 100%
 
   pages:
-    # Content area: 480 - 12*2 = 456 wide; full height with 12px padding
+    # Full 480px content width (no horizontal padding) so progress bar can span edge-to-edge.
+    # Vertical padding 12px; text/buttons use 12px horizontal inset via x/width.
     - id: main_page
       scrollbar_mode: "off"
       scrollable: false
@@ -18,49 +19,49 @@ lvgl:
       bg_color: 0x1E1E1E
       pad_top: 12
       pad_bottom: 12
-      pad_left: 12
-      pad_right: 12
+      pad_left: 0
+      pad_right: 0
 
       widgets:
-        # Full-screen artwork background (extends into page padding so no margin)
+        # Full-width artwork background (content height 456 with pad top/bottom 12)
         - image:
             id: album_art_background_widget
-            x: -12
-            y: -12
+            x: 0
+            y: 0
             width: 480px
-            height: 480px
+            height: 456px
             src: album_art_background
             opa: 70%
 
-        # Song title (single line, truncate with ... when long)
+        # Song title (single line, truncate with ... when long); 12px inset
         - label:
             id: media_title_label
             text: "—"
-            x: 0
+            x: 12
             y: 0
-            width: 100%
+            width: 456px
             height: 44px
             long_mode: dot
             text_font: roboto36_font
             text_color: 0xFFFFFF
             text_align: left
 
-        # Artist
+        # Artist; 12px inset
         - label:
             id: media_artist_label
             text: "—"
-            x: 0
+            x: 12
             y: 48
-            width: 100%
+            width: 456px
             text_font: roboto19_font
             text_color: 0xB0B0B0
             text_align: left
 
-        # Play clocks: elapsed (left) and duration (right) on one row, above progress bar
+        # Play clocks: elapsed (left) and duration (right) on one row, above progress bar; 12px inset
         - label:
             id: media_elapsed_label
             text: "0:00"
-            x: 0
+            x: 12
             y: 332
             width: 40px
             text_font: roboto15_font
@@ -69,20 +70,19 @@ lvgl:
         - label:
             id: media_duration_label
             text: "0:00"
-            x: 416
+            x: 428
             y: 332
             width: 40px
             text_font: roboto15_font
             text_color: 0xFFFFFF
             text_align: right
 
-        # Progress bar above the control buttons (full screen width 480px, white played / 50% black unplayed)
-        # x: -12 cancels page pad_left so bar spans from screen edge to edge
+        # Progress bar: full screen width (content area is 480px with pad_left/right 0)
         - bar:
             id: media_progress_bar
-            x: -12
+            x: 0
             y: 352
-            width: 480px
+            width: 100%
             height: 8px
             min_value: 0
             max_value: 100
@@ -95,10 +95,10 @@ lvgl:
               bg_opa: 50%
               radius: 0
 
-        # Control buttons: 72px round, at bottom of screen
+        # Control buttons: 72px round, at bottom (12px inset: 24+12=36, 192+12=204, 360+12=372)
         - button:
             id: media_prev_button
-            x: 24
+            x: 36
             y: 372
             width: 72px
             height: 72px
@@ -118,7 +118,7 @@ lvgl:
         # Play/pause: two icon labels; visibility toggled by sensors.yaml from state
         - button:
             id: media_play_pause_button
-            x: 192
+            x: 204
             y: 372
             width: 72px
             height: 72px
@@ -146,7 +146,7 @@ lvgl:
 
         - button:
             id: media_next_button
-            x: 360
+            x: 372
             y: 372
             width: 72px
             height: 72px
