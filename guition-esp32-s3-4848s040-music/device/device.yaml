@@ -158,9 +158,6 @@ globals:
   - id: touch_y_end
     type: int
     initial_value: '0'
-  - id: swipe_direction
-    type: int
-    initial_value: '0'
 
 
 # -----------------------------------------------------------------------------
@@ -184,7 +181,6 @@ touchscreen:
           id(touch_y_start) = touch.y;
           id(touch_x_end) = touch.x;
           id(touch_y_end) = touch.y;
-          ESP_LOGI("swipe", "TOUCH start x=%d y=%d", touch.x, touch.y);
     on_update:
       - lambda: |-
           for (auto touch: touches) {
@@ -197,33 +193,37 @@ touchscreen:
       - lambda: |-
           int dx = id(touch_x_end) - id(touch_x_start);
           int dy = id(touch_y_end) - id(touch_y_start);
-          id(swipe_direction) = 0;
+          // Require 80px+ horizontal movement and must be clearly horizontal
           if (abs(dx) > 80 && abs(dx) > abs(dy) * 2) {
-            id(swipe_direction) = (dx > 0) ? 1 : -1;
+            if (dx > 0) {
+              id(swipe_previous_track).execute();
+            } else {
+              id(swipe_next_track).execute();
+            }
           }
-          ESP_LOGI("swipe", "RELEASE dx=%d dy=%d dir=%d", dx, dy, id(swipe_direction));
-      - if:
-          condition:
-            lambda: 'return id(swipe_direction) == -1;'
-          then:
-            - logger.log: "Swipe left -> next track"
-            - homeassistant.service:
-                service: media_player.media_next_track
-                data_template:
-                  entity_id: "{{ entity_id }}"
-                variables:
-                  entity_id: !lambda 'return id(active_media_player_sensor).state;'
-      - if:
-          condition:
-            lambda: 'return id(swipe_direction) == 1;'
-          then:
-            - logger.log: "Swipe right -> previous track"
-            - homeassistant.service:
-                service: media_player.media_previous_track
-                data_template:
-                  entity_id: "{{ entity_id }}"
-                variables:
-                  entity_id: !lambda 'return id(active_media_player_sensor).state;'
+
+
+# -----------------------------------------------------------------------------
+# SWIPE GESTURE SCRIPTS
+# -----------------------------------------------------------------------------
+# Called by touchscreen on_release when a horizontal swipe is detected.
+# mode: single prevents duplicate triggers from rapid swipes.
+# -----------------------------------------------------------------------------
+script:
+  - id: swipe_next_track
+    mode: single
+    then:
+      - homeassistant.service:
+          service: media_player.media_next_track
+          data:
+            entity_id: ${media_player}
+  - id: swipe_previous_track
+    mode: single
+    then:
+      - homeassistant.service:
+          service: media_player.media_previous_track
+          data:
+            entity_id: ${media_player}
 
 
 # -----------------------------------------------------------------------------

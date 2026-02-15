@@ -1,10 +1,11 @@
-# ESP32-S3 Music Dashboard — Guition 4848S040
-# See README.md for required Home Assistant helper configuration.
+# ESP32-S3-Touch-LCD-7 Music Dashboard
 substitutions:
   name: "your-device-name"
   friendly_name: "Your Room Music"
   room: "Your Room"
+  media_player: "media_player.office"
   home_assistant_url: "http://homeassistant.local:8123"
+  tv_source: "TV"
 
 # Wifi Setup
 wifi:
@@ -22,7 +23,6 @@ packages:
             guition-esp32-s3-4848s040-music/addon/time.yaml,
             guition-esp32-s3-4848s040-music/addon/network.yaml,
             guition-esp32-s3-4848s040-music/addon/music.yaml,
-            guition-esp32-s3-4848s040-music/addon/entity_picker.yaml,
             guition-esp32-s3-4848s040-music/assets/fonts.yaml,
             guition-esp32-s3-4848s040-music/assets/icons.yaml,
             guition-esp32-s3-4848s040-music/theme/button.yaml]
