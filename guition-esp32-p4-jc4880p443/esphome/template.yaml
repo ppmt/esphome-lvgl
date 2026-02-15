@@ -1,4 +1,4 @@
-# ESP32-S3-Touch-LCD-7
+# Guition ESP32-P4 JC4880P443
 substitutions:
   name: "your-device-name"
   friendly_name: "Your Room Sensor"

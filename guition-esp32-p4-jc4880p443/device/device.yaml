@@ -1,6 +1,6 @@
 # Designed for guition-esp32-p4-jc4880p443
 esp32:
-  variant: esp32p4
+  board: esp32-p4-evboard
   flash_size: 16MB
   framework:
     type: esp-idf
@@ -28,7 +28,7 @@ external_components:
   
 # Secondary ESP32-C6 device for connectivity
 esp32_hosted:
-  variant: esp32c6
+  variant: ESP32C6
   reset_pin: GPIO54
   cmd_pin: GPIO19
   clk_pin: GPIO18
