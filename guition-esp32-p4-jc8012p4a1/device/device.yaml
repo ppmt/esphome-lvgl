@@ -28,8 +28,6 @@ logger:
 
 # External components
 external_components:
-  - source: github://willumpie82/esphome@dev
-    components: [mipi_dsi]
   - source: github://kvj/esphome@jd9365_gsl3680
     components: [gsl3680]
 
