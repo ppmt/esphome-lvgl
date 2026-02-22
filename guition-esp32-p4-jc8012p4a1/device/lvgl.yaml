@@ -28,14 +28,6 @@ lvgl:
           text_align: center
           text_color: 0xFFFFFF
 
-      # Touch debug label
-      - label:
-          text: ""
-          id: txtlbl
-          align: bottom_mid
-          y: -8
-          text_color: 0xFFFFFF
-          
   pages:
     - id: main_page
       layout: 
